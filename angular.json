@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "expert-system-frontend"
+    }
+  },
+  "defaultProject": "expert-system-frontend",
+  "cli": {
+    "analytics": false
+  }
 }

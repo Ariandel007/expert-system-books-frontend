@@ -21,7 +21,7 @@ export class AppComponent implements OnInit{
   constructor(private librosLeidosService: LibrosLeidosService,
               private librosRecomendadosService: LibrosRecomendadosService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadLibrosLeidos();
     this.loadLibrosRecomendados();
   }
@@ -43,11 +43,11 @@ export class AppComponent implements OnInit{
 
     this.librosLeidosService.postUserID(this.user).subscribe(next => {
       console.log('todo bien');
+      this.loadLibrosLeidos();
     }, error => {
         console.log('error');
     });
 
-    this.loadLibrosLeidos();
   }
 
   loadLibrosLeidos() {
@@ -63,11 +63,11 @@ export class AppComponent implements OnInit{
 
     this.librosRecomendadosService.postUserID(this.user).subscribe(next => {
       console.log('todo bien');
+      this.loadLibrosRecomendados();
     }, error => {
         console.log('error');
     });
 
-    this.loadLibrosRecomendados();
   }
 
   loadLibrosRecomendados() {
